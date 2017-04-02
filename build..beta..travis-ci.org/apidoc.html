@@ -1,0 +1,909 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/adametry/gulp-eslint#readme"
+
+    >gulp-eslint (v3.0.1)</a>
+</h1>
+<h4>A gulp plugin for processing files with ESLint</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-eslint">module gulp-eslint</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.failAfterError">
+            function <span class="apidocSignatureSpan">gulp-eslint.</span>failAfterError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.failOnError">
+            function <span class="apidocSignatureSpan">gulp-eslint.</span>failOnError
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.format">
+            function <span class="apidocSignatureSpan">gulp-eslint.</span>format
+            <span class="apidocSignatureSpan">(formatter, writable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.formatEach">
+            function <span class="apidocSignatureSpan">gulp-eslint.</span>formatEach
+            <span class="apidocSignatureSpan">(formatter, writable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.result">
+            function <span class="apidocSignatureSpan">gulp-eslint.</span>result
+            <span class="apidocSignatureSpan">(typeof action !== &#x27;function&#x27;)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.results">
+            function <span class="apidocSignatureSpan">gulp-eslint.</span>results
+            <span class="apidocSignatureSpan">(action)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-eslint.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-eslint.util">module gulp-eslint.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.createIgnoreResult">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>createIgnoreResult
+            <span class="apidocSignatureSpan">(&#x27;node_modules/&#x27;)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.filterResult">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>filterResult
+            <span class="apidocSignatureSpan">(result, filter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.firstResultMessage">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>firstResultMessage
+            <span class="apidocSignatureSpan">(result, condition)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.handleCallback">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>handleCallback
+            <span class="apidocSignatureSpan">(callback, value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.isErrorMessage">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>isErrorMessage
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.migrateOptions">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>migrateOptions
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.resolveFormatter">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>resolveFormatter
+            <span class="apidocSignatureSpan">(formatter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.resolveWritable">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>resolveWritable
+            <span class="apidocSignatureSpan">(writable)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.transform">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>transform
+            <span class="apidocSignatureSpan">(transform, flush)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.tryResultAction">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>tryResultAction
+            <span class="apidocSignatureSpan">(action, result, done)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-eslint.util.writeResults">
+            function <span class="apidocSignatureSpan">gulp-eslint.util.</span>writeResults
+            <span class="apidocSignatureSpan">(results, formatter, writable)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-eslint" id="apidoc.module.gulp-eslint">module gulp-eslint</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.failAfterError" id="apidoc.element.gulp-eslint.failAfterError">
+        function <span class="apidocSignatureSpan">gulp-eslint.</span>failAfterError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&#x3e; {
+	return gulpEslint.results(results =&#x3e; {
+		const count = results.errorCount;
+		if (!count) {
+			return;
+		}
+
+		throw new PluginError(&#x27;gulp-eslint&#x27;, {
+			name: &#x27;ESLintError&#x27;,
+			message: &#x27;Failed with &#x27; + count + (count === 1 ? &#x27; error&#x27; : &#x27; errors&#x27;)
+		});
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        // of the file object so it can be used by other modules.
+        .pipe(eslint())
+        // eslint.format() outputs the lint results to the console.
+        // Alternatively use eslint.formatEach() (see Docs).
+        .pipe(eslint.format())
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        .pipe(eslint.<span class="apidocCodeKeywordSpan">failAfterError</span>());
+});
+
+gulp.task(&#x27;default&#x27;, [&#x27;lint&#x27;], function () {
+    // This will only run if the lint task is successful...
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.failOnError" id="apidoc.element.gulp-eslint.failOnError">
+        function <span class="apidocSignatureSpan">gulp-eslint.</span>failOnError
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">() =&#x3e; {
+	return gulpEslint.result(result =&#x3e; {
+		const error = util.firstResultMessage(result, util.isErrorMessage);
+		if (!error) {
+			return;
+		}
+
+		throw new PluginError(&#x27;gulp-eslint&#x27;, {
+			name: &#x27;ESLintError&#x27;,
+			fileName: result.filePath,
+			message: error.message,
+			lineNumber: error.line
+		});
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	}));
+```
+
+Type: `function (results, callback) { callback(error); }`
+
+Call an asynchronous function once for all ESLint file results before a stream finishes. The callback must be called for the stream
+ to finish. If a value is passed to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
+
+### eslint.<span class="apidocCodeKeywordSpan">failOnError</span>()
+
+Stop a task/stream if an ESLint error has been reported for any file.
+
+```javascript
+// Cause the stream to stop(/fail) before copying an invalid JS file to the output directory
+gulp.src([&#x27;**/*.js&#x27;,&#x27;!node_modules/**&#x27;])
+	.pipe(eslint())
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.format" id="apidoc.element.gulp-eslint.format">
+        function <span class="apidocSignatureSpan">gulp-eslint.</span>format
+        <span class="apidocSignatureSpan">(formatter, writable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(formatter, writable) =&#x3e; {
+	formatter = util.resolveFormatter(formatter);
+	writable = util.resolveWritable(writable);
+
+	return gulpEslint.results(results =&#x3e; {
+		// Only format results if files has been lint&#x27;d
+		if (results.length) {
+			util.writeResults(results, formatter, writable);
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // So, it&#x27;s best to have gulp ignore the directory as well.
+    // Also, Be sure to return the stream from the task;
+    // Otherwise, the task may end before the stream has finished.
+    return gulp.src([&#x27;**/*.js&#x27;,&#x27;!node_modules/**&#x27;])
+        // eslint() attaches the lint output to the &#x22;eslint&#x22; property
+        // of the file object so it can be used by other modules.
+        .pipe(eslint())
+        // eslint.<span class="apidocCodeKeywordSpan">format</span>() outputs the lint results to the console.
+        // Alternatively use eslint.formatEach() (see Docs).
+        .pipe(eslint.format())
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        .pipe(eslint.failAfterError());
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.formatEach" id="apidoc.element.gulp-eslint.formatEach">
+        function <span class="apidocSignatureSpan">gulp-eslint.</span>formatEach
+        <span class="apidocSignatureSpan">(formatter, writable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(formatter, writable) =&#x3e; {
+	formatter = util.resolveFormatter(formatter);
+	writable = util.resolveWritable(writable);
+
+	return gulpEslint.result(result =&#x3e; util.writeResults([result], formatter, writable));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // Also, Be sure to return the stream from the task;
+    // Otherwise, the task may end before the stream has finished.
+    return gulp.src([&#x27;**/*.js&#x27;,&#x27;!node_modules/**&#x27;])
+        // eslint() attaches the lint output to the &#x22;eslint&#x22; property
+        // of the file object so it can be used by other modules.
+        .pipe(eslint())
+        // eslint.format() outputs the lint results to the console.
+        // Alternatively use eslint.<span class="apidocCodeKeywordSpan">formatEach</span>() (see Docs).
+        .pipe(eslint.format())
+        // To have the process exit with an error code (1) on
+        // lint error, return the stream and pipe to failAfterError last.
+        .pipe(eslint.failAfterError());
+});
+
+gulp.task(&#x27;default&#x27;, [&#x27;lint&#x27;], function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.result" id="apidoc.element.gulp-eslint.result">
+        function <span class="apidocSignatureSpan">gulp-eslint.</span>result
+        <span class="apidocSignatureSpan">(typeof action !== &#x27;function&#x27;)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">action =&#x3e; {
+	if (typeof action !== &#x27;function&#x27;) {
+		throw new Error(&#x27;Expected callable argument&#x27;);
+	}
+
+	return util.transform((file, enc, done) =&#x3e; {
+		if (file.eslint) {
+			util.tryResultAction(action, file.eslint, util.handleCallback(done, file));
+		} else {
+			done(null, file);
+		}
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### eslint(configFilePath)
+
+Type: `String`
+
+Shorthand for defining `options.configFile`.
+
+### eslint.<span class="apidocCodeKeywordSpan">result</span>(action)
+
+Type: `function (result) {}`
+
+Call a function for each ESLint file result. No returned value is expected. If an error is thrown, it will be wrapped in a Gulp
+PluginError and emitted from the stream.
+
+```javascript
+gulp.src([&#x27;**/*.js&#x27;,&#x27;!node_modules/**&#x27;])
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.results" id="apidoc.element.gulp-eslint.results">
+        function <span class="apidocSignatureSpan">gulp-eslint.</span>results
+        <span class="apidocSignatureSpan">(action)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">results = function (action) {
+	if (typeof action !== &#x27;function&#x27;) {
+		throw new Error(&#x27;Expected callable argument&#x27;);
+	}
+
+	const results = [];
+	results.errorCount = 0;
+	results.warningCount = 0;
+
+	return util.transform((file, enc, done) =&#x3e; {
+		if (file.eslint) {
+			results.push(file.eslint);
+			// collect total error/warning count
+			results.errorCount += file.eslint.errorCount;
+			results.warningCount += file.eslint.warningCount;
+		}
+		done(null, file);
+
+	}, done =&#x3e; {
+		util.tryResultAction(action, results, util.handleCallback(done));
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+Type: `function (result, callback) { callback(error); }`
+
+Call an asynchronous function for each ESLint file result. The callback must be called for the stream to finish. If a value is passed
+ to the callback, it will be wrapped in a Gulp PluginError and emitted from the stream.
+
+
+### eslint.<span class="apidocCodeKeywordSpan">results</span>(action)
+
+Type: `function (results) {}`
+
+Call a function once for all ESLint file results before a stream finishes. No returned value is expected. If an error is thrown,
+it will be wrapped in a Gulp PluginError and emitted from the stream.
+
+The results list has a &#x22;warningCount&#x22; property that is the sum of warnings in all results; likewise, an &#x22;errorCount
+&#x22; property is set to the sum of errors in all results.
+...</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-eslint.util" id="apidoc.module.gulp-eslint.util">module gulp-eslint.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.createIgnoreResult" id="apidoc.element.gulp-eslint.util.createIgnoreResult">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>createIgnoreResult
+        <span class="apidocSignatureSpan">(&#x27;node_modules/&#x27;)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">file =&#x3e; {
+	return {
+		filePath: file.path,
+		messages: [{
+			fatal: false,
+			severity: 1,
+			message: file.path.indexOf(&#x27;node_modules/&#x27;) &#x3c; 0 ?
+				&#x27;File ignored because of .eslintignore file&#x27; :
+				&#x27;File ignored because it has a node_modules/** path&#x27;
+		}],
+		errorCount: 0,
+		warningCount: 1
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			// (https://github.com/gulpjs/gulp/blob/master/docs/recipes/specifying-a-cwd.md)
+			// Also, ESLint doesn&#x27;t adjust file paths relative to an ancestory .eslintignore path.
+			// E.g., If ../.eslintignore has &#x22;foo/*.js&#x22;, ESLint will ignore ./foo/*.js, instead of ../foo/*.js.
+			// Eslint rolls this into `CLIEngine.executeOnText`. So, gulp-eslint must account for this limitation.
+
+			if (linter.options.ignore &#x26;&#x26; options.warnFileIgnored) {
+				// Warn that gulp.src is needlessly reading files that ESLint ignores
+				file.eslint = util.<span class="apidocCodeKeywordSpan">createIgnoreResult</span>(file);
+			}
+			cb(null, file);
+			return;
+		}
+
+		if (file.isStream()) {
+			file.contents = file.contents.pipe(new BufferStreams((err, buf, done) =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.filterResult" id="apidoc.element.gulp-eslint.util.filterResult">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>filterResult
+        <span class="apidocSignatureSpan">(result, filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(result, filter) =&#x3e; {
+	if (typeof filter !== &#x27;function&#x27;) {
+		filter = isErrorMessage;
+	}
+	const messages = result.messages.filter(filter, result);
+	return {
+		filePath: result.filePath,
+		messages: messages,
+		errorCount: messages.reduce(countErrorMessage, 0),
+		warningCount: messages.reduce(countWarningMessage, 0)
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+	function verify(str, filePath) {
+		const result = linter.executeOnText(str, filePath).results[0];
+		// Note: Fixes are applied as part of &#x22;executeOnText&#x22;.
+		// Any applied fix messages have been removed from the result.
+
+		if (options.quiet) {
+			// ignore warnings
+			return util.<span class="apidocCodeKeywordSpan">filterResult</span>(result, options.quiet);
+		}
+
+		return result;
+	}
+
+	return util.transform((file, enc, cb) =&#x3e; {
+		const filePath = path.relative(process.cwd(), file.path);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.firstResultMessage" id="apidoc.element.gulp-eslint.util.firstResultMessage">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>firstResultMessage
+        <span class="apidocSignatureSpan">(result, condition)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(result, condition) =&#x3e; {
+	if (!result.messages) {
+		return null;
+	}
+
+	return result.messages.find(condition);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Fail when an ESLint error is found in ESLint results.
+ *
+ * @returns {stream} gulp file stream
+ */
+gulpEslint.failOnError = () =&#x3e; {
+	return gulpEslint.result(result =&#x3e; {
+		const error = util.<span class="apidocCodeKeywordSpan">firstResultMessage</span>(result, util.isErrorMessage);
+		if (!error) {
+			return;
+		}
+
+		throw new PluginError(&#x27;gulp-eslint&#x27;, {
+			name: &#x27;ESLintError&#x27;,
+			fileName: result.filePath,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.handleCallback" id="apidoc.element.gulp-eslint.util.handleCallback">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>handleCallback
+        <span class="apidocSignatureSpan">(callback, value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(callback, value) =&#x3e; {
+	return err =&#x3e; {
+		if (err != null &#x26;&#x26; !(err instanceof gutil.PluginError)) {
+			err = new gutil.PluginError(err.plugin || &#x27;gulp-eslint&#x27;, err, {
+				showStack: (err.showStack !== false)
+			});
+		}
+
+		callback(err, value);
+	};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+gulpEslint.result = action =&#x3e; {
+	if (typeof action !== &#x27;function&#x27;) {
+		throw new Error(&#x27;Expected callable argument&#x27;);
+	}
+
+	return util.transform((file, enc, done) =&#x3e; {
+		if (file.eslint) {
+			util.tryResultAction(action, file.eslint, util.<span class="apidocCodeKeywordSpan">handleCallback</span>(done, file));
+		} else {
+			done(null, file);
+		}
+	});
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.isErrorMessage" id="apidoc.element.gulp-eslint.util.isErrorMessage">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>isErrorMessage
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isErrorMessage(message) {
+	const level = message.fatal ? 2 : message.severity;
+
+	if (Array.isArray(level)) {
+		return level[0] &#x3e; 1;
+	}
+
+	return level &#x3e; 1;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.migrateOptions" id="apidoc.element.gulp-eslint.util.migrateOptions">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>migrateOptions
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function migrateOptions(options) {
+	if (typeof options === &#x27;string&#x27;) {
+		// basic config path overload: gulpEslint(&#x27;path/to/config.json&#x27;)
+		options = {
+			configFile: options
+		};
+	}
+
+	return options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Append ESLint result to each file
+ *
+ * @param {(Object|String)} [options] - Configure rules, env, global, and other options for running ESLint
+ * @returns {stream} gulp file stream
+ */
+function gulpEslint(options) {
+	options = util.<span class="apidocCodeKeywordSpan">migrateOptions</span>(options) || {};
+	const linter = new CLIEngine(options);
+
+	function verify(str, filePath) {
+		const result = linter.executeOnText(str, filePath).results[0];
+		// Note: Fixes are applied as part of &#x22;executeOnText&#x22;.
+		// Any applied fix messages have been removed from the result.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.resolveFormatter" id="apidoc.element.gulp-eslint.util.resolveFormatter">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>resolveFormatter
+        <span class="apidocSignatureSpan">(formatter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(formatter) =&#x3e; {
+	// use ESLint to look up formatter references
+	if (typeof formatter !== &#x27;function&#x27;) {
+		// load formatter (module, relative to cwd, ESLint formatter)
+		formatter =	CLIEngine.getFormatter(formatter) || formatter;
+	}
+
+	return formatter;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* Format the results of each file individually.
+*
+* @param {(String|Function)} [formatter=stylish] - The name or function for a ESLint result formatter
+* @param {(Function|Stream)} [writable=gulp-util.log] - A funtion or stream to write the formatted ESLint results.
+* @returns {stream} gulp file stream
+*/
+gulpEslint.formatEach = (formatter, writable) =&#x3e; {
+	formatter = util.<span class="apidocCodeKeywordSpan">resolveFormatter</span>(formatter);
+	writable = util.resolveWritable(writable);
+
+	return gulpEslint.result(result =&#x3e; util.writeResults([result], formatter, writable));
+};
+
+/**
+* Wait until all files have been linted and format all results at once.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.resolveWritable" id="apidoc.element.gulp-eslint.util.resolveWritable">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>resolveWritable
+        <span class="apidocSignatureSpan">(writable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(writable) =&#x3e; {
+	if (!writable) {
+		writable = gutil.log;
+	} else if (typeof writable.write === &#x27;function&#x27;) {
+		writable = writable.write.bind(writable);
+	}
+	return writable;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*
+* @param {(String|Function)} [formatter=stylish] - The name or function for a ESLint result formatter
+* @param {(Function|Stream)} [writable=gulp-util.log] - A funtion or stream to write the formatted ESLint results.
+* @returns {stream} gulp file stream
+*/
+gulpEslint.formatEach = (formatter, writable) =&#x3e; {
+	formatter = util.resolveFormatter(formatter);
+	writable = util.<span class="apidocCodeKeywordSpan">resolveWritable</span>(writable);
+
+	return gulpEslint.result(result =&#x3e; util.writeResults([result], formatter, writable));
+};
+
+/**
+* Wait until all files have been linted and format all results at once.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.transform" id="apidoc.element.gulp-eslint.util.transform">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>transform
+        <span class="apidocSignatureSpan">(transform, flush)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">transform = function (transform, flush) {
+	if (typeof flush === &#x27;function&#x27;) {
+		return new Transform({
+			objectMode: true,
+			transform,
+			flush
+		});
+	}
+
+	return new Transform({
+		objectMode: true,
+		transform
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+			// ignore warnings
+			return util.filterResult(result, options.quiet);
+		}
+
+		return result;
+	}
+
+	return util.<span class="apidocCodeKeywordSpan">transform</span>((file, enc, cb) =&#x3e; {
+		const filePath = path.relative(process.cwd(), file.path);
+
+		if (file.isNull()) {
+			cb(null, file);
+			return;
+		}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.tryResultAction" id="apidoc.element.gulp-eslint.util.tryResultAction">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>tryResultAction
+        <span class="apidocSignatureSpan">(action, result, done)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">tryResultAction = function (action, result, done) {
+	try {
+		if (action.length &#x3e; 1) {
+			// async action
+			action.call(this, result, done);
+		} else {
+			// sync action
+			action.call(this, result);
+			done();
+		}
+	} catch (error) {
+		done(error == null ? new Error(&#x27;Unknown Error&#x27;) : error);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+gulpEslint.result = action =&#x3e; {
+	if (typeof action !== &#x27;function&#x27;) {
+		throw new Error(&#x27;Expected callable argument&#x27;);
+	}
+
+	return util.transform((file, enc, done) =&#x3e; {
+		if (file.eslint) {
+			util.<span class="apidocCodeKeywordSpan">tryResultAction</span>(action, file.eslint, util.handleCallback(done, file));
+		} else {
+			done(null, file);
+		}
+	});
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-eslint.util.writeResults" id="apidoc.element.gulp-eslint.util.writeResults">
+        function <span class="apidocSignatureSpan">gulp-eslint.util.</span>writeResults
+        <span class="apidocSignatureSpan">(results, formatter, writable)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">(results, formatter, writable) =&#x3e; {
+	if (!results) {
+		results = [];
+	}
+
+	const firstResult = results.find(result =&#x3e; result.config);
+
+	const message = formatter(results, firstResult ? firstResult.config : {});
+	if (writable &#x26;&#x26; message != null &#x26;&#x26; message !== &#x27;&#x27;) {
+		writable(message);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {(Function|Stream)} [writable=gulp-util.log] - A funtion or stream to write the formatted ESLint results.
+* @returns {stream} gulp file stream
+*/
+gulpEslint.formatEach = (formatter, writable) =&#x3e; {
+	formatter = util.resolveFormatter(formatter);
+	writable = util.resolveWritable(writable);
+
+	return gulpEslint.result(result =&#x3e; util.<span class="apidocCodeKeywordSpan">writeResults</span>([result], formatter, writable
+));
+};
+
+/**
+* Wait until all files have been linted and format all results at once.
+*
+* @param {(String|Function)} [formatter=stylish] - The name or function for a ESLint result formatter
+* @param {(Function|stream)} [writable=gulp-util.log] - A funtion or stream to write the formatted ESLint results.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
